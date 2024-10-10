@@ -1,4 +1,4 @@
-
+package GPU;
 
 class msiGpu implements gpu{
     public void makeGpu(){
