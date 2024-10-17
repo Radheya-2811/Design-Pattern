@@ -1,12 +1,12 @@
 package ObserverDesignPattern.Weather;
 import java.util.*;
 
-public class weatherData implements Subject {
+public class WeatherData implements Subject {
     List<Observer> observers;
-    float temprature;
+    float temperature;
     float humidity;
     float pressure;
-    weatherData(){
+    WeatherData(){
         observers=new ArrayList<>();
     }
    
@@ -17,15 +17,15 @@ public class weatherData implements Subject {
         observers.remove(o);
     }
 
-    public void setMeasurment(float temprature,float humidity,float pressure){
-        this.temprature=temprature;
+    public void setMeasurment(float temperature,float humidity,float pressure){
+        this.temperature=temperature;
         this.humidity=humidity;
         this.pressure=pressure;
         measurmentChanged();
     }
     public void notifyObserver(){
         for(Observer o:observers){
-            o.update(temprature, humidity, pressure);
+            o.update(temperature, humidity, pressure);
         }
 
     }
@@ -36,7 +36,7 @@ public class weatherData implements Subject {
         return humidity;
     }
     public float getTemprature() {
-        return temprature;
+        return temperature;
     }
     public float getPressure() {
         return pressure;
